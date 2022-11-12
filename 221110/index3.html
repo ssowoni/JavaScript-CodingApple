@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel ="stylesheet" href="main.css">
+</head>
+<body>
+<!--클래스는 중복이 가능하기 때문에 document.getElementsByClassName('title')[0]
+    이런식으로 적어줘도 된다. 참고참고. -->
+
+    <div id="alert" class="alert-box">알림창 입니다.</div>
+    <button onclick="showalert('block','아이디를 입력하세요')">버튼 1</button>
+    <button onclick="showalert('block','비번을 입력하세요')">버튼 2</button>
+    <button id="close">닫기</button>
+
+    <script>
+
+        //이벤트 리스너 addEventListener() 사용하기
+        //해당 id의 요소를 클릭하면 함수가 실행된다.
+        //이벤트 명을 적으면 된다. click, keydown, scroll,mouseover 이런 식으로! 유저의 행동 감시
+        //함수명은 생략 가능한다. 그럼 콜백함수라고 하는데 파라미터자리에 들어가는 함수를 의미한다. 
+        document.getElementById('close').addEventListener('click', function(){
+            //코드 입력~~~~~
+            document.getElementById('alert').style.display = 'none';
+        });
+
+
+
+        function showalert(behavior, sentence){
+            document.getElementById('alert').style.display = behavior
+            document.getElementById('alert').innerHTML = sentence
+        }
+
+    </script>
+    
+</body>
+</html>

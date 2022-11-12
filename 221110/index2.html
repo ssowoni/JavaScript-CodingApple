@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel ="stylesheet" href="main.css">
+</head>
+<body>
+    <!--  UI 만드는 step
+        1.HTML/CSS로 미리 디자인-->
+
+        <div class="alert-box" id="alert">
+            <!-- 알림창  <button onclick="document.getElementById('alert').style.display='none';">닫기</button> -->
+            알림창  <button onclick="alertButton('none')">닫기</button>
+            
+        </div>
+
+        <!--  UI 만드는 step
+        2. 버튼을 누르면 보여달라고 한다.-->
+        <!-- <button onclick="alert 박스 보여줘~~ 이렇게 코드 짜면 된다. 이 안에">버튼</button> -->
+        <!-- <button onclick="document.getElementById('alert').style.display='block'">버튼</button> -->
+        <button onclick="alertButton('block', '아이디를 입력해주세요')">버튼1</button>
+        <button onclick="alertButton('block', '비번을 입력해주세요')">버튼2</button>
+
+
+
+        <div id="plus" >값<button onclick="plus(8,12)">숫자 버튼</button></div>
+
+
+        <!--자바스크립트 코드는 html 아래 작성해야 잘 동작한다.-->
+        <script>
+/*             
+            함수 생성해보기 
+
+            function alertShow(){
+                document.getElementById('alert').style.display='block';
+
+            }
+
+            function alertClose(){
+                document.getElementById('alert').style.display='none';
+            } */
+
+            //파라미터 사용해보기 
+            function alertButton(behavior, alertComent){
+                document.getElementById('alert').style.display=behavior;
+                document.getElementById('alert').innerHTML = alertComent;
+
+            }
+
+            function plus(a,b){
+                document.getElementById('plus').innerHTML= a+b;
+            }
+
+        </script>
+
+
+        
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- html 조작하기위해 자바스크립트 사용하는 것.! -->
+    
+    <!-- <h1 style="color: blue" id="hello">안녕하세요</h1> -->
+    <h1 id="hello">안녕하세요</h1>
+    <h1 id="hi">안녕하세요</h1>
+
+
+    <script>
+        //문서(html) .(~의) element(html 요소)  byId(id에 의해서 id가 즉 hello인 것)
+        document.getElementById('hello').innerHTML = '안녕';
+        document.getElementById('hello').style.color = 'red';
+        document.getElementById('hello').style.fontSize = '16px';
+
+        
+       
+       // document.getElementById('바꿀 html 요소 id').무엇을 = '어떻게 바꿀지'
+       //getElementById('바꿀 html 요소 id')를 셀렉터라고 한다.
+       //ex) document.getElementById('hello').style.color = 'red';
+
+       document.getElementById('hi').innerHTML = 'JS 고수예요';
+
+
+        
+    </script>
+</body>
+</html>
