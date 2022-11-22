@@ -23,10 +23,22 @@
     background : rgba(0,0,0,0.5);
     z-index : 5;
     padding: 30px;
-    /* display: none; */
+    /*display: none; 시작 스타일*/
+    visibility: hidden; /*display랑 비슷하지만 이건 모습만 숨기기에 더 좋다. */
+    opacity : 0; /*시작 투명도*/
+    transition : all 1s; /*모든 css 스타일 변할 때 1초에 걸려 진행하게 해라.*/
   }
-  .white-bg {
+.white-bg {
     background: white;
     border-radius: 5px;
     padding: 30px;
   } 
+
+  .show-modal{
+    visibility: visible; 
+    opacity : 1; /*끝 투명도*/
+  }
+
+  .showMessage{
+    display: none;
+  }

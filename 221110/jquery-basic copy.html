@@ -11,23 +11,35 @@
   </head>
   <body>
 
-    <button id="showLogin">로그인</button>
-    <div class="black-bg">
+    <!--클래스 부착하면 확장성이 좋아진다.-->
+    <div class="black-bg" show-modal >
       <div class="white-bg">
         <h4>로그인하세요</h4>
         <button class="btn btn-danger" id="close">닫기</button>
       </div>
     </div> 
-  
+
+    <button id="showLogin">로그인</button>
+
       <script>
       
-        $('.showLogin').on('click',function(){
-          $('.black-bg').show();
+        // $('#showLogin').on('click',function(){
+        //   $('.black-bg').show();
+        // })
+
+        // $('#close').on('click',function(){
+        //   $('.black-bg').close();
+        // })
+
+        $('#showLogin').on('click',function(){
+          $('.black-bg').addClass('show-modal')
         })
 
         $('#close').on('click',function(){
-          $('.black-bg').close();
+          $('.black-bg').removeClass('show-modal')
         })
+
+
 
       </script>
 
