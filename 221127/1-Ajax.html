@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+      
+            <!-- <div class="col-sm-4" >
+              <img src="https://via.placeholder.com/600" class="w-100">
+              <h5>Card title</h5>
+              <p>가격 : 70000</p>
+            </div> -->
+      
+        </div>
+      </div> 
+
+      <div class="container">
+      <button class="btn btn-danger" id="addList"> 더보기 </button>
+      </div>
+
+      <script>
+
+        $('#addList').on('click',function(){
+        $.get('https://codingapple1.github.io/js/more1.json')
+        .done(function(data){
+            console.log(data)
+
+        //     for(let i=0; i<data.length; i++){
+        //     var 템플릿 = 
+        //     `<div class="col-sm-4"> 
+        //     <img src="https://via.placeholder.com/600" class="w-100">
+        //     <h5>${data[i].title}</h5>
+        //     <p>가격 : ${data[i].price}</p>
+        //     </div>`;
+
+        //     $('.row').append(템플릿)
+        // }
+        dataList(data);
+
+
+
+            console.log(products)
+
+        }).fail(function(){
+            console.log('실패함')
+        })
+
+
+        
+
+    })
+
+    // function datafor(data){
+    //     for(let i=0; i<data.length; i++){
+    //         return data[i]
+    //     }
+    // }
+
+
+
+
+
+      </script>
+
+
+    <script>
+       /*  $.get('https://codingapple1.github.io/hello.txt')
+        .done(function(data){
+            console.log(data);
+        }).fail(function(){
+            console.log('실패함')
+        }) */
+
+/*         $.post('https://codingapple1.github.io/hello.txt', {name:'kim'})
+        .done(function(data){
+            console.log(data);
+        }) */
+
+        //data.price key값 입력하면 value도 불러올 수 있다. 
+/*         $.get('https://codingapple1.github.io/price.json')
+        .done(function(data){
+            console.log(data);
+        }).fail(function(){
+            console.log('실패함')
+        }) */
+
+
+
+    
+
+
+
+        var products=[
+            {id:0, price:70000, title:'Blosson Dress'},
+            {id:1, price:50000, title:'Springfield Shirt'},
+            {id:2, price:60000, title:'Black Monastery'},
+
+            ];
+
+
+        dataList(products);
+
+        // products.forEach((a, i)=>{
+        //     //a.title a.price 이렇게 적어두 됨
+        //     var 템플릿 = 
+        //     `<div class="col-sm-4"> 
+        //     <img src="https://via.placeholder.com/600" class="w-100">
+        //     <h5>${a.title}</h5>
+        //     <p>가격 : ${products[i].price}</p>
+        //     </div>`;
+
+        //     $('.row').append(템플릿)
+
+
+        //     const count = 1;
+        //     console.log(`value : ${count}, type:${typeof count}`); //backtic;;
+        //     console.log('value : ${count}, type:${typeof count}'); // single quoto
+
+
+        // });
+
+
+
+        function dataList(data){
+
+            products.forEach((a, i)=>{
+            //a.title a.price 이렇게 적어두 됨
+            var 템플릿 = 
+            `<div class="col-sm-4"> 
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${a.title}</h5>
+            <p>가격 : ${products[i].price}</p>
+            </div>`;
+
+            $('.row').append(템플릿)
+
+
+            const count = 1;
+            console.log(`value : ${count}, type:${typeof count}`); //backtic;;
+            console.log('value : ${count}, type:${typeof count}'); // single quoto
+
+
+        });
+
+        }
+       
+    
+
+
+
+    </script>
+</body>
+</html>
